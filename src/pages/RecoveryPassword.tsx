@@ -1,27 +1,29 @@
 import React from 'react'
 import '../styles/RecoveryPassword.scss'
 
-const RecoveryPassword = () => {
+const PasswordRecovery = () => {
   return (
-    <section className='login'>
-      <div className='form-container'>
-        <img src='./logos/logo_yard_sale.svg' className='logo' alt='logo' />
-        <h1 className='tittle'>Email has been sent!</h1>
-        <p className='subtittle'>
-          Please check your inbox for instructions on how to reset your
-          password.
+    <div className='PasswordRecovery'>
+      <div className='PasswordRecovery-container'>
+        <img src='./logos/logo_yard_sale.svg' alt='logo' className='logo' />
+        <h1 className='title'>Password recovery</h1>
+        <p className='subtitle'>
+          Inform the email address used to create your account
         </p>
-        <figure className='email-image'>
-          <img src='./icons/email.svg' alt='email' />
-        </figure>
-        <button className='primary-button login-button'>Login</button>
-        <p className='resend'>
-          <span>Didn't receive the email?</span>
-          <a href='/'>Resend</a>
-        </p>
+        <form action='/' className='form'>
+          <label htmlFor='email' className='label'>
+            Email address
+          </label>
+          <input type='text' id='email' className='input input-email' />
+          <input
+            type='submit'
+            value='Confirm'
+            className='primary-button login-button'
+          />
+        </form>
       </div>
-    </section>
+    </div>
   )
 }
 
-export default RecoveryPassword
+export default PasswordRecovery

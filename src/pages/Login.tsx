@@ -3,18 +3,18 @@ import '../styles/Login.scss'
 
 const Login = () => {
   return (
-    <section className='login'>
-      <div className='form-container'>
-        <img src='./logos/logo_yard_sale.svg' className='logo' alt='logo' />
+    <div className='Login'>
+      <div className='Login-container'>
+        <img src='./logos/logo_yard_sale.svg' alt='logo' className='logo' />
         <form action='/' className='form'>
           <label htmlFor='email' className='label'>
-            Email
+            Email address
           </label>
           <input
             type='text'
             id='email'
+            placeholder='platzi@example.cm'
             className='input input-email'
-            placeholder='name@mail.com'
           />
           <label htmlFor='password' className='label'>
             Password
@@ -22,8 +22,8 @@ const Login = () => {
           <input
             type='password'
             id='password'
+            placeholder='*********'
             className='input input-password'
-            placeholder='********'
           />
           <input
             type='submit'
@@ -34,7 +34,7 @@ const Login = () => {
         </form>
         <button className='secondary-button signup-button'>Sign up</button>
       </div>
-    </section>
+    </div>
   )
 }
 

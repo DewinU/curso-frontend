@@ -1,6 +1,6 @@
-const path = require('path');
-const HtmlWebPackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const HtmlWebPackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
   entry: './src/index.tsx',
@@ -11,6 +11,15 @@ module.exports = {
   },
   mode: 'development',
   resolve: {
+    alias: {
+      '@components': path.resolve(__dirname, 'src/components/'),
+      '@containers': path.resolve(__dirname, 'src/containers/'),
+      '@pages': path.resolve(__dirname, 'src/pages/'),
+      '@styles': path.resolve(__dirname, 'src/styles/'),
+      '@icons': path.resolve(__dirname, 'src/assets/icons/'),
+      '@logos': path.resolve(__dirname, 'src/assets/logos/'),
+      '@routes': path.resolve(__dirname, 'src/routes/'),
+    },
     extensions: ['.js', '.jsx', '.ts', '.tsx'],
   },
   module: {
@@ -30,6 +39,10 @@ module.exports = {
         test: /\.s[ac]ss$/i,
         use: ['style-loader', 'css-loader', 'sass-loader'],
       },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        type: 'asset',
+      },
     ],
   },
   plugins: [
@@ -47,4 +60,4 @@ module.exports = {
     compress: true,
     port: 3005,
   },
-};
+}
