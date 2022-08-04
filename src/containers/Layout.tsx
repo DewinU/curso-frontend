@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Layout = ({ children }) => {
-  return <section className='Layout'>{children}</section>
-}
+const Layout = ({ children }: React.PropsWithChildren) => {
+  return <section className='Layout'>{children}</section>;
+};
 
-export default Layout
+export default Layout;

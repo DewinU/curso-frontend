@@ -1,11 +1,11 @@
-import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Layout from '../containers/Layout'
-import Login from '../containers/Login'
-import RecoveryPassword from '../containers/RecoveryPassword'
-import Home from '../pages/Home'
-import NotFound from '../pages/NotFound'
-import '../styles/global.scss'
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Layout from '../containers/Layout';
+import Login from '../containers/Login';
+import RecoveryPassword from '../containers/RecoveryPassword';
+import Home from '../pages/Home';
+import NotFound from '../pages/NotFound';
+import '../styles/global.scss';
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
         </Routes>
       </Layout>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
