@@ -1,5 +1,5 @@
-import React from 'react';
-import '../styles/RecoveryPassword.scss';
+import React from 'react'
+import '../styles/RecoveryPassword.scss'
 
 const RecoveryPassword = () => {
   return (
@@ -21,7 +21,7 @@ const RecoveryPassword = () => {
         </p>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default RecoveryPassword;
+export default RecoveryPassword
