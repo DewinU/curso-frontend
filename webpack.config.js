@@ -12,11 +12,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   resolve: {
-    plugins: [
-      new TsconfigPathsPlugin({
-        /* options: see below */
-      }),
-    ],
+    plugins: [new TsconfigPathsPlugin()],
     extensions: ['.js', '.ts', '.tsx'],
   },
   module: {
@@ -36,7 +32,7 @@ module.exports = {
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        type: 'asset',
+        type: 'asset/resource',
       },
     ],
   },
@@ -51,7 +47,6 @@ module.exports = {
   ],
   devServer: {
     historyApiFallback: true,
-    static: path.join(__dirname, 'dist'),
     compress: true,
     port: 3005,
   },
