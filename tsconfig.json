@@ -19,7 +19,8 @@
       "@pages/*": ["src/pages/*"],
       "@icons/*": ["src/assets/icons/*"],
       "@logos/*": ["src/assets/logos/*"],
-      "@routes/*": ["src/routes/*"]
+      "@routes/*": ["src/routes/*"],
+      "@hooks/*": ["src/hooks/*"]
     },
     "sourceMap": true
   },
