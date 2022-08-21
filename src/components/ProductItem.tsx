@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import '@styles/ProductItem.scss'
-import addToCart from '@icons/bt_add_to_cart.svg'
+import addToCartIcon from '@icons/bt_add_to_cart.svg'
+import AppContenxt from '@context/AppContext'
 
 type ProductItemProps = {
   id?: number
@@ -11,10 +12,12 @@ type ProductItemProps = {
 }
 
 const ProductItem = ({ product }: any) => {
-  const [cart, setCart] = useState([])
-  const handleCart = () => {
-    setCart([])
+  const { addToCart } = useContext(AppContenxt)
+
+  const handleAddToCart = (item: any) => {
+    addToCart!(item)
   }
+
   const { id, title, price, images } = product
   return (
     <div className='ProductItem'>
@@ -28,8 +31,8 @@ const ProductItem = ({ product }: any) => {
           <p>{title}</p>
           <p>{}</p>
         </div>
-        <figure onClick={handleCart}>
-          <img src={addToCart} alt='' />
+        <figure onClick={() => handleAddToCart(product)}>
+          <img src={addToCartIcon} alt='' />
         </figure>
       </div>
     </div>
