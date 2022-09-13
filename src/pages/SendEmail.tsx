@@ -1,4 +1,3 @@
-import React from 'react'
 import '@styles/SendEmail.scss'
 import logo from '@logos/logo_yard_sale.svg'
 import emailIcon from '@icons/email.svg'
