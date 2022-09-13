@@ -1,4 +1,3 @@
-
 import OrderItem from '@components/OrderItem'
 import '@styles/Checkout.scss'
 
