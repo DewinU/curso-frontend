@@ -12,10 +12,9 @@ type ProductItemProps = {
   images?: string[]
 }
 
-
 const ProductItem = ({ product }: any) => {
   const { addToCart, removeFromCart, state } = useContext(AppContenxt)
-  const [ icon, setIcon ] = useState(addToCartIcon)
+  const [icon, setIcon] = useState(addToCartIcon)
 
   const handleAddToCart = (item: any) => {
     addToCart!(item)
@@ -34,20 +33,15 @@ const ProductItem = ({ product }: any) => {
     removeFromCart!(item)
   }
 
-  const handleClick = (item:any) => {
-    if (icon == addToCartIcon ) {
+  const handleClick = (item: any) => {
+    if (icon == addToCartIcon) {
       handleAddToCart(item)
       setIcon(itemAddedIcon)
-    }
-    else{
+    } else {
       handleRemoveToCart(item)
       setIcon(addToCartIcon)
     }
   }
-
-
-
-
 
   const { id, title, price, images } = product
   return (
@@ -62,7 +56,7 @@ const ProductItem = ({ product }: any) => {
           <p>{title}</p>
           <p>{}</p>
         </div>
-        <figure onClick={ () => handleClick(product)}>
+        <figure onClick={() => handleClick(product)}>
           <img src={icon} alt='' />
         </figure>
       </div>

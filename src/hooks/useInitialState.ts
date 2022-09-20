@@ -1,10 +1,11 @@
 import { useState } from 'react'
 
-const initialState: { cart: any[], showOrders:boolean, showOptions:boolean } = {
-  cart: [],
-  showOrders: false,
-  showOptions: false
-}
+const initialState: { cart: any[]; showOrders: boolean; showOptions: boolean } =
+  {
+    cart: [],
+    showOrders: false,
+    showOptions: false,
+  }
 
 const useInitialState = () => {
   const [state, setState] = useState(initialState)
@@ -22,13 +23,12 @@ const useInitialState = () => {
       cart: state.cart.filter((item: any) => item !== payload),
     })
   }
-  
 
   const toggleOrders = () => {
     setState({
       ...state,
       showOrders: !state.showOrders,
-      showOptions: false
+      showOptions: false,
     })
   }
 
@@ -36,10 +36,9 @@ const useInitialState = () => {
     setState({
       ...state,
       showOptions: !state.showOptions,
-      showOrders: false
+      showOrders: false,
     })
   }
-
 
   return {
     state,

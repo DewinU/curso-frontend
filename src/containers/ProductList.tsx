@@ -4,7 +4,6 @@ import useGetProducts from '@hooks/useGetProducts'
 import AppContext from '@context/AppContext'
 import { useContext } from 'react'
 
-
 const API = 'https://api.escuelajs.co/api/v1/products'
 interface ProductItemProps {
   id: number
@@ -16,7 +15,7 @@ interface ProductItemProps {
 
 const ProductList = () => {
   const products = useGetProducts(API)
-  
+
   return (
     <section className='main-container'>
       <div className='ProductList'>
