@@ -1,6 +1,7 @@
-import React, { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import '@styles/ProductItem.scss'
 import addToCartIcon from '@icons/bt_add_to_cart.svg'
+import itemAddedIcon from '@icons/bt_added_to_cart.svg'
 import AppContenxt from '@context/AppContext'
 
 type ProductItemProps = {
@@ -11,12 +12,42 @@ type ProductItemProps = {
   images?: string[]
 }
 
+
 const ProductItem = ({ product }: any) => {
-  const { addToCart } = useContext(AppContenxt)
+  const { addToCart, removeFromCart, state } = useContext(AppContenxt)
+  const [ icon, setIcon ] = useState(addToCartIcon)
 
   const handleAddToCart = (item: any) => {
     addToCart!(item)
   }
+
+  useEffect(() => {
+    const isInCart = state!.cart.find((item: any) => item.id === product.id)
+    if (isInCart) {
+      setIcon(itemAddedIcon)
+    } else {
+      setIcon(addToCartIcon)
+    }
+  }, [state!.cart])
+
+  const handleRemoveToCart = (item: any) => {
+    removeFromCart!(item)
+  }
+
+  const handleClick = (item:any) => {
+    if (icon == addToCartIcon ) {
+      handleAddToCart(item)
+      setIcon(itemAddedIcon)
+    }
+    else{
+      handleRemoveToCart(item)
+      setIcon(addToCartIcon)
+    }
+  }
+
+
+
+
 
   const { id, title, price, images } = product
   return (
@@ -31,8 +62,8 @@ const ProductItem = ({ product }: any) => {
           <p>{title}</p>
           <p>{}</p>
         </div>
-        <figure onClick={() => handleAddToCart(product)}>
-          <img src={addToCartIcon} alt='' />
+        <figure onClick={ () => handleClick(product)}>
+          <img src={icon} alt='' />
         </figure>
       </div>
     </div>

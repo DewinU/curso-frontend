@@ -8,11 +8,8 @@ import MyOrder from '@containers/MyOrder'
 import AppContext from '@context/AppContext'
 
 const Header = () => {
-  const [toogle, setToogle] = useState(false)
-
-  const { state } = useContext(AppContext)
-
-  const [toggleOrders, setToggleOrders] = useState(false)
+ 
+  const { state, toggleOrders, toggleOptions } = useContext(AppContext)
 
   return (
     <nav>
@@ -42,19 +39,19 @@ const Header = () => {
       </div>
       <div className='navbar-right'>
         <ul>
-          <li className='navbar-email' onClick={() => setToogle(!toogle)}>
+          <li className='navbar-email' onClick={ () => toggleOptions!() }>
             platzi@example.com
           </li>
           <li
             className='navbar-shopping-cart'
-            onClick={() => setToggleOrders(!toggleOrders)}>
+            onClick={ () => toggleOrders!() }>
             <img src={shooping_cart} alt='shopping cart' />
             {state!.cart.length > 0 && <div>{state!.cart.length}</div>}
           </li>
         </ul>
       </div>
-      {toogle && <Menu />}
-      {toggleOrders && <MyOrder />}
+      {state!.showOptions && <Menu />}
+      {state!.showOrders && <MyOrder />}
     </nav>
   )
 }

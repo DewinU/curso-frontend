@@ -6,10 +6,14 @@
   right: 0;
   background-color: white;
   top: 60px;
-  overflow-y: auto;
   max-height: 600px;
   border-radius: 6px;
   border: 1px solid var(--very-light-pink);
+
+  .order-items {
+    max-height: 300px;
+    overflow-y: auto;
+  }
 }
 .title-container {
   display: flex;
