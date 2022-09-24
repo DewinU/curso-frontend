@@ -7,13 +7,11 @@ import shooping_cart from '@icons/icon_shopping_cart.svg'
 import MyOrder from '@containers/MyOrder'
 import AppContext from '@context/AppContext'
 
-const MobileNav = () => {
-  const { state, toggleOrders, toggleOptions } = useContext(AppContext)
+const MobileNav = ({state}:any) => {
 
   return (
     <section className="mobile-menu">
         <ul>
-            <li><a href="/">CATEGORIES</a></li>
             <li><a href="/">All</a></li>
             <li><a href="/">Clothes</a></li>
             <li><a href="/">Electronics</a></li>

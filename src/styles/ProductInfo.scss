@@ -1,5 +1,22 @@
 .ProductInfo {
   margin: 24px 24px 0 24px;
+
+  .primary-button {
+    background-color: var(--hospital-green);
+    border-radius: 8px;
+    border: none;
+    color: var(--white);
+    width: 100%;
+    cursor: pointer;
+    font-size: var(--md);
+    font-weight: bold;
+    height: 50px;
+  }
+  .add-to-cart-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 .ProductInfo p:nth-child(1) {
   font-weight: bold;
@@ -19,19 +36,4 @@
   margin-top: 0;
   margin-bottom: 36px;
 }
-.primary-button {
-  background-color: var(--hospital-green);
-  border-radius: 8px;
-  border: none;
-  color: var(--white);
-  width: 100%;
-  cursor: pointer;
-  font-size: var(--md);
-  font-weight: bold;
-  height: 50px;
-}
-.add-to-cart-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+

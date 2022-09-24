@@ -1,5 +1,10 @@
 .mobile-menu {
-    padding: 24px;
+    width: 50vw;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    top: 61px;
+    left: 0;
 }
 
 .mobile-menu a {
@@ -10,15 +15,9 @@
 }
 
 
-.mobile-menu ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    margin-top: 24px;
-}
 
 .mobile-menu ul li {
-    margin-bottom: 24px;
+    padding: 24px 0px 24px 24px;
 }
 
 .mobile-menu ul:nth-child(1) {
@@ -36,6 +35,16 @@
 }
 
 .mobile-menu ul:last-child {
+    li{
+        padding-bottom: 0px;
+    }
     position: absolute;
-    bottom: 0;
+    bottom: 80px;
 }
+
+
+@media (min-width: 640px) {
+    .mobile-menu {
+        display: none;
+    }
+  }

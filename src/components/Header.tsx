@@ -6,13 +6,16 @@ import logo from '@logos/logo_yard_sale.svg'
 import shooping_cart from '@icons/icon_shopping_cart.svg'
 import MyOrder from '@containers/MyOrder'
 import AppContext from '@context/AppContext'
+import MobileNav from './MobileNav'
 
 const Header = () => {
   const { state, toggleOrders, toggleOptions } = useContext(AppContext)
 
+  const [showMenu, setShowMenu] = useState(false)
+
   return (
     <nav>
-      <img src={menu} alt='menu' className='nav-menu' />
+      <img src={menu} alt='menu' onClick={() => setShowMenu(!showMenu)} className='nav-menu' />
       <div className='navbar-left'>
         <img src={logo} alt='logo' className='nav-logo' />
         <ul>
@@ -49,6 +52,7 @@ const Header = () => {
       </div>
       {state!.showOptions && <Menu />}
       {state!.showOrders && <MyOrder />}
+      {showMenu && <MobileNav state={showMenu} />}
     </nav>
   )
 }
