@@ -1,10 +1,8 @@
 import ProductItem from '@components/ProductItem'
 import '@styles/ProductList.scss'
 import useGetProducts from '@hooks/useGetProducts'
-import AppContext from '@context/AppContext'
-import { useContext } from 'react'
 
-const API = 'https://api.escuelajs.co/api/v1/products'
+const API = 'https://api.escuelajs.co/api/v1/products?limit=50&offset=0'
 interface ProductItemProps {
   id: number
   title: string
