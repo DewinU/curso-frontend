@@ -35,7 +35,7 @@ const ProductItem = ({ product }: any) => {
 
   const handleClick = (item: any) => {
     if (icon == addToCartIcon) return handleAddToCart(item)
-    return handleRemoveToCart(item)
+    handleRemoveToCart(item)
   }
 
   const { id, title, price, images } = product
