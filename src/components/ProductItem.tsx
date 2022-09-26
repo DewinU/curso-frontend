@@ -33,18 +33,13 @@ const ProductItem = ({ product }: any) => {
     removeFromCart!(item)
   }
 
-  const handleClick = (item: any) => {
-    if (icon == addToCartIcon) return handleAddToCart(item)
-    handleRemoveToCart(item)
-  }
+  const handleClick = (item: any) =>
+    icon == addToCartIcon ? handleAddToCart(item) : handleRemoveToCart(item)
 
   const { id, title, price, images } = product
   return (
     <div className='ProductItem'>
-      <img
-        src={images[0]}
-        alt={title}
-      />
+      <img src={images[0]} alt={title} />
       <div className='product-info'>
         <div>
           <p>${price}</p>

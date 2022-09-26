@@ -17,7 +17,7 @@ const ProductList = () => {
   return (
     <section className='main-container'>
       <div className='ProductList'>
-        {products.map((product:ProductItemProps ) => (
+        {products.map((product: ProductItemProps) => (
           <ProductItem key={product.id} product={product} cart='' />
         ))}
       </div>

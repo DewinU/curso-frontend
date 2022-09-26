@@ -15,7 +15,12 @@ const Header = () => {
 
   return (
     <nav>
-      <img src={menu} alt='menu' onClick={() => setShowMenu(!showMenu)} className='nav-menu' />
+      <img
+        src={menu}
+        alt='menu'
+        onClick={() => setShowMenu(!showMenu)}
+        className='nav-menu'
+      />
       <div className='navbar-left'>
         <img src={logo} alt='logo' className='nav-logo' />
         <ul>

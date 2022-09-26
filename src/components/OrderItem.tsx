@@ -1,4 +1,4 @@
-import  { useContext } from 'react'
+import { useContext } from 'react'
 import AppContext from '@context/AppContext'
 import '@styles/OrderItem.scss'
 import iconClose from '@icons/icon_close.png'
@@ -10,10 +10,7 @@ const OrderItem = ({ item }: any) => {
   return (
     <div className='OrderItem'>
       <figure>
-        <img
-          src={images[0]}
-          alt={title}
-        />
+        <img src={images[0]} alt={title} />
       </figure>
       <p>{title}</p>
       <p>${price}</p>
